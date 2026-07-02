@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitor Counter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Animated background orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="container">
+      <div class="card">
+
+        <!-- Header -->
+        <div class="card-header">
+          <div class="status-dot"></div>
+          <span class="status-label">Live</span>
+        </div>
+
+        <!-- Icon + title -->
+        <div class="hero">
+          <div class="avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h1>Visitor Counter</h1>
+          <p class="tagline">Powered by serverless AWS infrastructure</p>
+        </div>
+
+        <!-- Counter -->
+        <div class="counter-section">
+          <p class="counter-label">Total Visitors</p>
+          <div class="counter-display">
+            <span id="visitor-count" class="counter">—</span>
+          </div>
+          <p class="counter-sub" id="counter-sub">Fetching count&hellip;</p>
+        </div>
+
+        <!-- Tech stack pills -->
+        <div class="tech-stack">
+          <span class="pill"><span class="pill-dot pill-orange"></span>Lambda</span>
+          <span class="pill"><span class="pill-dot pill-purple"></span>API Gateway</span>
+          <span class="pill"><span class="pill-dot pill-blue"></span>DynamoDB</span>
+          <span class="pill"><span class="pill-dot pill-teal"></span>S3</span>
+        </div>
+
+        <!-- Refresh button -->
+        <button id="refresh-btn" onclick="fetchVisitorCount()">
+          <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/>
+            <polyline points="1 20 1 14 7 14"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+          Refresh
+        </button>
+
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
